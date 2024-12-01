@@ -21,11 +21,10 @@ def main():
             all_left.append(int(split_line[0].strip()))
             all_right.append(int(split_line[1].strip()))
 
-    all_left.sort()
-    all_right.sort()
     accumulated_sum = 0
-    for i in range(len(all_left)):
-        accumulated_sum += abs(all_left[i] - all_right[i])
+    for left_number in all_left:
+        occurrences = all_right.count(left_number)
+        accumulated_sum += left_number * occurrences
 
     print(accumulated_sum)
 
