@@ -47,9 +47,7 @@ def main():
             # Need to reorder
             for i in range(len(page_update) - 1, 0, -1):
                 for j in range(i - 1, -1, -1):
-                    current_val = page_update[i]
-                    compared_val = page_update[j]
-                    if compared_val in adjacency_list[current_val]:
+                    if page_update[j] in adjacency_list[page_update[i]]:
                         # Swap
                         page_update[i], page_update[j] = page_update[j], page_update[i]
             part2 += page_update[len(page_update) // 2]
